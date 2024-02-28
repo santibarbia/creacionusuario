@@ -1,4 +1,4 @@
-package com.creacionusuario.repositories;
+package com.creacionusuario.repository;
 
 import com.creacionusuario.entities.Phone;
 import org.springframework.data.jpa.repository.JpaRepository;

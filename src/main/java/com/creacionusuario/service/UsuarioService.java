@@ -1,7 +1,7 @@
 package com.creacionusuario.service;
 
 import com.creacionusuario.constants.Constants;
-import com.creacionusuario.controller.contract.ResponseActualizacionUsuarioContract;
+import com.creacionusuario.controller.contract.ActualizacionUsuarioContract;
 import com.creacionusuario.controller.contract.RegistroUsuarioContract;
 import com.creacionusuario.controller.contract.ResponseRegistroContract;
 import com.creacionusuario.controller.contract.ResponseUserContract;
@@ -13,7 +13,7 @@ import com.creacionusuario.mapper.PhoneMapper;
 import com.creacionusuario.mapper.UsuarioMapper;
 import com.creacionusuario.models.PhoneModel;
 import com.creacionusuario.models.ResponseModel;
-import com.creacionusuario.repositories.UserRepository;
+import com.creacionusuario.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -86,7 +86,7 @@ public class UsuarioService {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    public ResponseEntity<ResponseModel> modificarUsuario(ResponseActualizacionUsuarioContract body) throws ApiException {
+    public ResponseEntity<ResponseModel> modificarUsuario(ActualizacionUsuarioContract body) throws ApiException {
         log.info("Comienza actualizacion");
         String uuid = StringUtils.hasText(body.getId()) ? body.getId() : "";
 

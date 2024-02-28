@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Data
-public class ResponseActualizacionUsuarioContract {
+public class ActualizacionUsuarioContract {
     private String id;
     private String name;
     private String email;

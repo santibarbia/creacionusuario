@@ -1,6 +1,6 @@
 package com.creacionusuario.controller;
 
-import com.creacionusuario.controller.contract.ResponseActualizacionUsuarioContract;
+import com.creacionusuario.controller.contract.ActualizacionUsuarioContract;
 import com.creacionusuario.controller.contract.RegistroUsuarioContract;
 import com.creacionusuario.controller.contract.ResponseRegistroContract;
 import com.creacionusuario.controller.contract.ResponseUserContract;
@@ -65,8 +65,8 @@ public class CreacionUsuarioController {
 
     @PutMapping(value = "/usuario/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Modificar usuario")
-    @ApiResponse(responseCode = "200", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ResponseActualizacionUsuarioContract.class))))
-    public ResponseEntity<ResponseModel> updateUsuario(@RequestBody ResponseActualizacionUsuarioContract body) throws Exception {
+    @ApiResponse(responseCode = "200", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ActualizacionUsuarioContract.class))))
+    public ResponseEntity<ResponseModel> updateUsuario(@RequestBody ActualizacionUsuarioContract body) throws ApiException {
         log.info("validando campo de email");
         ValidEmailPatternUtils.emailPatterValid(body.getEmail());
         log.info("Validacion correcta");
@@ -74,7 +74,7 @@ public class CreacionUsuarioController {
     }
     @DeleteMapping(value = "/usuario/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Borrar usuario")
-    @ApiResponse(responseCode = "200", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ResponseActualizacionUsuarioContract.class))))
+    @ApiResponse(responseCode = "200", content = @Content(array = @ArraySchema(schema = @Schema(implementation = ActualizacionUsuarioContract.class))))
     public ResponseEntity<ResponseModel> deleteUsuario(@PathVariable(name = "id") String id) throws ApiException {
 
         return usuarioService.deleteUsuario(id);
