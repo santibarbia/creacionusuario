@@ -1,6 +1,6 @@
 package com.creacionusuario.mapper;
 
-import com.creacionusuario.controller.contract.ResponseActualizacionUsuarioContract;
+import com.creacionusuario.controller.contract.ActualizacionUsuarioContract;
 import com.creacionusuario.controller.contract.RegistroUsuarioContract;
 import com.creacionusuario.controller.contract.ResponseRegistroContract;
 import com.creacionusuario.controller.contract.ResponseUserContract;
@@ -24,7 +24,7 @@ public class UsuarioMapper {
                 .password(body.getPassword())
                 .build();
     }
-    public User mapToUpdateRecord(User user, ResponseActualizacionUsuarioContract body){
+    public User mapToUpdateRecord(User user, ActualizacionUsuarioContract body){
         user.setEmail(body.getEmail());
         user.setName(body.getName());
         user.setPassword(body.getPassword());
